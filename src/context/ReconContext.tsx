@@ -1,30 +1,60 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-// ১. Context টাইপ ডিফাইন করা
+// 1. Context Interface
 interface ReconContextType {
+  activePage: string;
+  setActivePage: (page: string) => void;
+  currentTrack: string;
+  setCurrentTrack: (track: string) => void;
   activeTab: string;
   setActiveTab: (tab: string) => void;
-  [key: string]: any; // অন্যান্য প্রয়োজনীয় স্টেট যোগ করার জন্য
+  activeLabelModalParcel: any;
+  setActiveLabelModalParcel: (parcel: any) => void;
+  [key: string]: any;
 }
 
-// ২. Context তৈরি করা
+// 2. Create Context
 const ReconContext = createContext<ReconContextType | undefined>(undefined);
 
-// ৩. Provider কম্পোনেন্ট
-export const ReconProvider = ({ children }: { children: ReactNode }) => {  const [activeTab, setActiveTab] = useState<string>('dashboard');
+// 3. Provider Component
+export const ReconProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [activePage, setActivePage] = useState<string>('orders');
+  const [currentTrack, setCurrentTrack] = useState<string>('track-a');
+  const [activeTab, setActiveTab] = useState<string>('overview');
+  const [activeLabelModalParcel, setActiveLabelModalParcel] = useState<any>(null);
 
   return (
-    <ReconContext.Provider value={{ activeTab, setActiveTab }}>
+    <ReconContext.Provider
+      value={{
+        activePage,
+        setActivePage,
+        currentTrack,
+        setCurrentTrack,
+        activeTab,
+        setActiveTab,
+        activeLabelModalParcel,
+        setActiveLabelModalParcel,
+      }}
+    >
       {children}
     </ReconContext.Provider>
   );
 };
 
-// ৪. Custom Hook (useRecon)
+// 4. Custom Hook with Safe Fallback
 export const useRecon = () => {
   const context = useContext(ReconContext);
   if (!context) {
-    throw new Error('useRecon must be used within a ReconProvider');
+    return {
+      activePage: 'orders',
+      setActivePage: () => {},
+      currentTrack: 'track-a',
+      setCurrentTrack: () => {},
+      activeTab: 'overview',
+      setActiveTab: () => {},
+      activeLabelModalParcel: null,
+      setActiveLabelModalParcel: () => {},
+    } as ReconContextType;
   }
   return context;
 };
