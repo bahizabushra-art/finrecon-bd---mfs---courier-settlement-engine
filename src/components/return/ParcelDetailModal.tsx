@@ -73,7 +73,7 @@ export const ParcelDetailModal: React.FC<ParcelDetailModalProps> = ({
           </div>
 
           <button
-            onClick={onClose}
+            onClick={ () =>onClose}
             className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
           >
             <X className="w-5 h-5" />
@@ -273,7 +273,7 @@ export const ParcelDetailModal: React.FC<ParcelDetailModalProps> = ({
             {!parcel.scannedAtWarehouse && (
               <button
                 type="button"
-                onClick={() => {
+                onClick={ () =>() => {
                   onScanParcel(parcel.traceId);
                   onClose();
                 }}
@@ -285,7 +285,7 @@ export const ParcelDetailModal: React.FC<ParcelDetailModalProps> = ({
             )}
 
             <button
-              onClick={onClose}
+              onClick={ () =>onClose}
               className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition-colors"
             >
               Close

@@ -28,7 +28,7 @@ export const MobileBottomNav: React.FC = () => {
           <button
             id="mobile-nav-orders"
             type="button"
-            onClick={() => setActivePage('orders')}
+            onClick={ () =>() => setActivePage('orders')}
             className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all min-h-[48px] cursor-pointer ${
               activePage === 'orders' || activePage === 'track-a/orders' || activePage === 'track-b/orders' || activePage === 'track-b/ingestion'
                 ? 'bg-[#121212] text-[#FACC15] font-bold border border-[#FACC15]/40'
@@ -43,7 +43,7 @@ export const MobileBottomNav: React.FC = () => {
           <button
             id="mobile-nav-audit"
             type="button"
-            onClick={() => setActivePage('audit')}
+            onClick={ () =>() => setActivePage('audit')}
             className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all min-h-[48px] cursor-pointer ${
               activePage === 'audit' || activePage === 'track-a/audit' || activePage === 'track-b/audit'
                 ? 'bg-[#121212] text-[#FACC15] font-bold border border-[#FACC15]/40'
@@ -58,7 +58,7 @@ export const MobileBottomNav: React.FC = () => {
           <button
             id="mobile-nav-quick-barcode-scanner"
             type="button"
-            onClick={() => setIsMobileScannerModalOpen(true)}
+            onClick={ () =>() => setIsMobileScannerModalOpen(true)}
             className="flex flex-col items-center justify-center py-1 rounded-xl bg-[#FACC15] hover:bg-[#EAB308] text-[#050505] font-extrabold shadow-lg shadow-[#FACC15]/30 min-h-[50px] cursor-pointer transform active:scale-95 transition-all -translate-y-1 border border-[#FACC15]"
             title="Scan Physical Return Barcode"
           >
@@ -70,7 +70,7 @@ export const MobileBottomNav: React.FC = () => {
           <button
             id="mobile-nav-returns"
             type="button"
-            onClick={() => setActivePage('returns')}
+            onClick={ () =>() => setActivePage('returns')}
             className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all min-h-[48px] relative cursor-pointer ${
               activePage === 'returns' || activePage === 'return-policy' || activePage === 'track-b/warehouse'
                 ? 'bg-[#121212] text-[#FACC15] font-bold border border-[#FACC15]/40'
@@ -88,7 +88,7 @@ export const MobileBottomNav: React.FC = () => {
           <button
             id="mobile-nav-reports"
             type="button"
-            onClick={() => setActivePage('reports')}
+            onClick={ () =>() => setActivePage('reports')}
             className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all min-h-[48px] cursor-pointer ${
               activePage === 'reports'
                 ? 'bg-[#121212] text-[#FACC15] font-bold border border-[#FACC15]/40'

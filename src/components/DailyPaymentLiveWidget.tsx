@@ -80,7 +80,7 @@ export const DailyPaymentLiveWidget: React.FC<{ trackName?: string }> = ({ track
         {/* Action Button: Close Day & Transfer to 6-Month Ledger */}
         <button
           id="close-day-transfer-btn"
-          onClick={handleCloseDay}
+          onClick={ () =>handleCloseDay}
           disabled={isClosingDay}
           className="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 cursor-pointer disabled:opacity-50 transition-all min-h-[40px] shrink-0"
         >
@@ -137,7 +137,7 @@ export const DailyPaymentLiveWidget: React.FC<{ trackName?: string }> = ({ track
 
           {/* Live Sim Trigger */}
           <button
-            onClick={() => handleSimulate('FULL_ADVANCE')}
+            onClick={ () =>() => handleSimulate('FULL_ADVANCE')}
             className="w-full py-1.5 px-2.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors cursor-pointer border border-emerald-500/20"
           >
             <PlusCircle className="w-3.5 h-3.5" />
@@ -181,7 +181,7 @@ export const DailyPaymentLiveWidget: React.FC<{ trackName?: string }> = ({ track
 
           {/* Live Sim Trigger */}
           <button
-            onClick={() => handleSimulate('SPLIT_PAYMENT')}
+            onClick={ () =>() => handleSimulate('SPLIT_PAYMENT')}
             className="w-full py-1.5 px-2.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors cursor-pointer border border-blue-500/20"
           >
             <PlusCircle className="w-3.5 h-3.5" />
@@ -218,7 +218,7 @@ export const DailyPaymentLiveWidget: React.FC<{ trackName?: string }> = ({ track
 
           {/* Live Sim Trigger */}
           <button
-            onClick={() => handleSimulate('FULL_COD')}
+            onClick={ () =>() => handleSimulate('FULL_COD')}
             className="w-full py-1.5 px-2.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors cursor-pointer border border-amber-500/20"
           >
             <PlusCircle className="w-3.5 h-3.5" />
@@ -255,7 +255,7 @@ export const DailyPaymentLiveWidget: React.FC<{ trackName?: string }> = ({ track
 
           {/* Live Sim Trigger */}
           <button
-            onClick={() => handleSimulate('FREE_DELIVERY')}
+            onClick={ () =>() => handleSimulate('FREE_DELIVERY')}
             className="w-full py-1.5 px-2.5 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors cursor-pointer border border-indigo-500/20"
           >
             <PlusCircle className="w-3.5 h-3.5" />

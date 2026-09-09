@@ -99,7 +99,7 @@ export const GlobalQuickScanModal: React.FC<GlobalQuickScanModalProps> = ({ isOp
 
           <button
             type="button"
-            onClick={onClose}
+            onClick={ () =>onClose}
             className="p-2 rounded-lg text-[#A1A1AA] hover:text-[#FFFFFF] hover:bg-zinc-800 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
             aria-label="Close"
           >
@@ -111,7 +111,7 @@ export const GlobalQuickScanModal: React.FC<GlobalQuickScanModalProps> = ({ isOp
         <div className="p-4 sm:p-5 space-y-4 overflow-y-auto custom-scrollbar flex-1">
           {/* Simulated Camera Viewport with Touch to Scan */}
           <div 
-            onClick={() => handleExecuteScan('TR-RET-203')}
+            onClick={ () =>() => handleExecuteScan('TR-RET-203')}
             title="Tap viewport to simulate camera barcode detection"
             className="relative rounded-xl overflow-hidden border-2 border-dashed border-[#FACC15]/60 bg-[#050505] h-40 sm:h-44 flex flex-col items-center justify-center cursor-pointer active:scale-[0.99] transition-transform select-none group"
           >
@@ -163,7 +163,7 @@ export const GlobalQuickScanModal: React.FC<GlobalQuickScanModalProps> = ({ isOp
               <button
                 id="modal-verify-scan-btn"
                 type="button"
-                onClick={() => handleExecuteScan()}
+                onClick={ () =>() => handleExecuteScan()}
                 disabled={isScanning || !inputCode.trim()}
                 className="w-full sm:w-auto px-5 py-3 rounded-xl bg-[#FACC15] hover:bg-[#EAB308] text-[#050505] font-bold text-xs font-mono tracking-wide shadow-md shadow-[#FACC15]/20 disabled:opacity-40 transition-all flex items-center justify-center gap-1.5 cursor-pointer min-h-[48px] shrink-0 active:scale-[0.98]"
               >
@@ -190,7 +190,7 @@ export const GlobalQuickScanModal: React.FC<GlobalQuickScanModalProps> = ({ isOp
                 <button
                   key={item.code}
                   type="button"
-                  onClick={() => handleExecuteScan(item.code)}
+                  onClick={ () =>() => handleExecuteScan(item.code)}
                   className="text-left p-2.5 sm:p-3 rounded-xl bg-[#050505] hover:bg-zinc-900 border border-[#27272A] hover:border-[#FACC15] active:border-[#FACC15] active:bg-[#1a1a1a] transition-all cursor-pointer min-h-[48px] flex flex-col justify-center"
                 >
                   <div className="flex items-center justify-between">
@@ -251,7 +251,7 @@ export const GlobalQuickScanModal: React.FC<GlobalQuickScanModalProps> = ({ isOp
           </div>
           <button
             type="button"
-            onClick={onClose}
+            onClick={ () =>onClose}
             className="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-xs transition-colors min-h-[40px] cursor-pointer"
           >
             Close Terminal

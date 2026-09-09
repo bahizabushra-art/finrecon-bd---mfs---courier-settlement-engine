@@ -119,7 +119,7 @@ export const SecurityTTL: React.FC = () => {
           {/* Purge Action Button: Bold Yellow Button */}
           <button
             id="simulate-daily-purge-btn"
-            onClick={runTtlPurgeSimulation}
+            onClick={ () =>runTtlPurgeSimulation}
             disabled={isTtlRunning}
             className="w-full py-3 px-4 rounded-xl bg-[#FACC15] hover:bg-[#EAB308] text-[#050505] font-bold text-xs font-mono tracking-wide shadow-md shadow-[#FACC15]/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
           >

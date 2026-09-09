@@ -119,7 +119,7 @@ export const PaymentSchemeLifecycle: React.FC<{ trackContext: 'Track A Enterpris
         <div className="flex flex-wrap items-center gap-2.5 shrink-0">
           <button
             id="scheme-reconcile-transfer-btn"
-            onClick={handleReconcileBatch}
+            onClick={ () =>handleReconcileBatch}
             disabled={reconciling || pendingRecords.length === 0}
             className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold flex items-center gap-2 shadow-lg shadow-emerald-500/20 cursor-pointer disabled:opacity-50 transition-all min-h-[42px]"
           >
@@ -138,7 +138,7 @@ export const PaymentSchemeLifecycle: React.FC<{ trackContext: 'Track A Enterpris
 
           <button
             id="scheme-download-csv-btn"
-            onClick={handleDownloadAndSave}
+            onClick={ () =>handleDownloadAndSave}
             className="px-4 py-2.5 rounded-xl bg-[#131C33] hover:bg-[#1C294A] border border-[#233354] text-cyan-300 text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer min-h-[42px]"
           >
             <Download className="w-4 h-4" />
@@ -235,7 +235,7 @@ export const PaymentSchemeLifecycle: React.FC<{ trackContext: 'Track A Enterpris
         {/* Tabs */}
         <div className="flex items-center gap-1 bg-[#090D18] p-1 rounded-xl border border-[#1E293B] w-full sm:w-auto">
           <button
-            onClick={() => setActiveTab('all')}
+            onClick={ () =>() => setActiveTab('all')}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
               activeTab === 'all'
                 ? 'bg-blue-600 text-white shadow'
@@ -245,7 +245,7 @@ export const PaymentSchemeLifecycle: React.FC<{ trackContext: 'Track A Enterpris
             All Schemes ({trackRecords.length})
           </button>
           <button
-            onClick={() => setActiveTab('before')}
+            onClick={ () =>() => setActiveTab('before')}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === 'before'
                 ? 'bg-amber-600 text-white shadow'
@@ -256,7 +256,7 @@ export const PaymentSchemeLifecycle: React.FC<{ trackContext: 'Track A Enterpris
             <span>Before Reconciled ({pendingRecords.length})</span>
           </button>
           <button
-            onClick={() => setActiveTab('after')}
+            onClick={ () =>() => setActiveTab('after')}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
               activeTab === 'after'
                 ? 'bg-emerald-600 text-white shadow'
@@ -489,7 +489,7 @@ export const PaymentSchemeLifecycle: React.FC<{ trackContext: 'Track A Enterpris
               <div className="pt-2 border-t border-[#1A2338] flex items-center justify-between">
                 <span className="text-[10px] text-slate-400 truncate max-w-[170px]">{batch.fileName}</span>
                 <button
-                  onClick={() => downloadSchemeLifecycleCSV(trackContext)}
+                  onClick={ () =>() => downloadSchemeLifecycleCSV(trackContext)}
                   className="px-2 py-1 rounded bg-blue-600/20 hover:bg-blue-600/30 text-cyan-300 text-[10px] font-mono font-medium flex items-center gap-1 cursor-pointer"
                 >
                   <Download className="w-3 h-3" />

@@ -316,7 +316,7 @@ export const ReturnPolicy: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
           {/* Responsive Camera Viewfinder - Tap to Scan on Phone / Tab */}
           <div 
-            onClick={() => handleQuickScan('TR-RET-203')}
+            onClick={ () =>() => handleQuickScan('TR-RET-203')}
             title="Tap viewfinder to trigger instant physical return scan"
             className="lg:col-span-4 rounded-xl border border-dashed border-[#FACC15]/60 bg-[#050505] h-36 sm:h-40 flex flex-col items-center justify-center relative cursor-pointer active:scale-[0.99] transition-transform select-none group"
           >
@@ -378,7 +378,7 @@ export const ReturnPolicy: React.FC = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 <button
                   type="button"
-                  onClick={() => handleQuickScan('TR-RET-203')}
+                  onClick={ () =>() => handleQuickScan('TR-RET-203')}
                   className="p-2 rounded-xl bg-[#050505] hover:bg-zinc-900 border border-[#A855F7]/50 hover:border-[#A855F7] text-left transition-all flex flex-col justify-center min-h-[46px] cursor-pointer"
                 >
                   <div className="flex items-center justify-between">
@@ -390,7 +390,7 @@ export const ReturnPolicy: React.FC = () => {
 
                 <button
                   type="button"
-                  onClick={() => handleQuickScan('TR-RET-202')}
+                  onClick={ () =>() => handleQuickScan('TR-RET-202')}
                   className="p-2 rounded-xl bg-[#050505] hover:bg-zinc-900 border border-[#FACC15]/50 hover:border-[#FACC15] text-left transition-all flex flex-col justify-center min-h-[46px] cursor-pointer"
                 >
                   <div className="flex items-center justify-between">
@@ -402,7 +402,7 @@ export const ReturnPolicy: React.FC = () => {
 
                 <button
                   type="button"
-                  onClick={() => handleQuickScan('TR-RET-201')}
+                  onClick={ () =>() => handleQuickScan('TR-RET-201')}
                   className="p-2 rounded-xl bg-[#050505] hover:bg-zinc-900 border border-[#EF4444]/50 hover:border-[#EF4444] text-left transition-all flex flex-col justify-center min-h-[46px] cursor-pointer"
                 >
                   <div className="flex items-center justify-between">
@@ -414,7 +414,7 @@ export const ReturnPolicy: React.FC = () => {
 
                 <button
                   type="button"
-                  onClick={() => handleQuickScan('TR-COD-7701')}
+                  onClick={ () =>() => handleQuickScan('TR-COD-7701')}
                   className="p-2 rounded-xl bg-[#050505] hover:bg-zinc-900 border border-[#22C55E]/50 hover:border-[#22C55E] text-left transition-all flex flex-col justify-center min-h-[46px] cursor-pointer"
                 >
                   <div className="flex items-center justify-between">
@@ -470,7 +470,7 @@ export const ReturnPolicy: React.FC = () => {
                 <button
                   key={fee}
                   type="button"
-                  onClick={() => setConfiguredBaseFeeBDT(fee)}
+                  onClick={ () =>() => setConfiguredBaseFeeBDT(fee)}
                   className={`px-2 py-1 rounded text-xs font-bold transition-all ${
                     configuredBaseFeeBDT === fee 
                       ? 'bg-[#FACC15] text-[#050505]' 
@@ -534,7 +534,7 @@ export const ReturnPolicy: React.FC = () => {
                   <button
                     key={d}
                     type="button"
-                    onClick={() => setRetentionThresholdDays(d)}
+                    onClick={ () =>() => setRetentionThresholdDays(d)}
                     className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${
                       retentionThresholdDays === d ? 'bg-[#FACC15] text-[#050505]' : 'bg-zinc-800 text-zinc-400'
                     }`}
@@ -631,21 +631,21 @@ export const ReturnPolicy: React.FC = () => {
             <div className="flex items-center p-0.5 bg-[#121212] border border-[#27272A] rounded-lg text-xs font-mono">
               <button
                 type="button"
-                onClick={() => setFilterReturnTrack('ALL')}
+                onClick={ () =>() => setFilterReturnTrack('ALL')}
                 className={`px-2.5 py-1 rounded transition-colors ${filterReturnTrack === 'ALL' ? 'bg-[#FACC15] text-[#050505] font-bold' : 'text-[#A1A1AA]'}`}
               >
                 All
               </button>
               <button
                 type="button"
-                onClick={() => setFilterReturnTrack('Track A Enterprise')}
+                onClick={ () =>() => setFilterReturnTrack('Track A Enterprise')}
                 className={`px-2.5 py-1 rounded transition-colors ${filterReturnTrack === 'Track A Enterprise' ? 'bg-[#FACC15] text-[#050505] font-bold' : 'text-[#A1A1AA]'}`}
               >
                 Track A
               </button>
               <button
                 type="button"
-                onClick={() => setFilterReturnTrack('Track B SME')}
+                onClick={ () =>() => setFilterReturnTrack('Track B SME')}
                 className={`px-2.5 py-1 rounded transition-colors ${filterReturnTrack === 'Track B SME' ? 'bg-[#FACC15] text-[#050505] font-bold' : 'text-[#A1A1AA]'}`}
               >
                 Track B
@@ -656,28 +656,28 @@ export const ReturnPolicy: React.FC = () => {
             <div className="flex items-center p-0.5 bg-[#121212] border border-[#27272A] rounded-lg text-xs font-mono">
               <button
                 type="button"
-                onClick={() => setVectorFilter('ALL')}
+                onClick={ () =>() => setVectorFilter('ALL')}
                 className={`px-2 py-1 rounded transition-colors ${vectorFilter === 'ALL' ? 'bg-zinc-800 text-white font-bold' : 'text-[#A1A1AA]'}`}
               >
                 All
               </button>
               <button
                 type="button"
-                onClick={() => setVectorFilter('VECTOR_3')}
+                onClick={ () =>() => setVectorFilter('VECTOR_3')}
                 className={`px-2 py-1 rounded transition-colors ${vectorFilter === 'VECTOR_3' ? 'bg-[#A855F7] text-white font-bold' : 'text-[#A1A1AA]'}`}
               >
                 Ghost
               </button>
               <button
                 type="button"
-                onClick={() => setVectorFilter('VECTOR_1')}
+                onClick={ () =>() => setVectorFilter('VECTOR_1')}
                 className={`px-2 py-1 rounded transition-colors ${vectorFilter === 'VECTOR_1' ? 'bg-[#EF4444] text-white font-bold' : 'text-[#A1A1AA]'}`}
               >
                 Overcharge
               </button>
               <button
                 type="button"
-                onClick={() => setVectorFilter('VERIFIED')}
+                onClick={ () =>() => setVectorFilter('VERIFIED')}
                 className={`px-2 py-1 rounded transition-colors ${vectorFilter === 'VERIFIED' ? 'bg-[#22C55E] text-white font-bold' : 'text-[#A1A1AA]'}`}
               >
                 Verified
@@ -757,7 +757,7 @@ export const ReturnPolicy: React.FC = () => {
                 <div className="pt-2 flex items-center gap-2">
                   <button
                     type="button"
-                    onClick={() => setInspectParcel(parcel)}
+                    onClick={ () =>() => setInspectParcel(parcel)}
                     className="flex-1 py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-xs flex items-center justify-center gap-1 min-h-[44px]"
                   >
                     <Eye className="w-4 h-4 text-[#A1A1AA]" />
@@ -767,7 +767,7 @@ export const ReturnPolicy: React.FC = () => {
                   {!parcel.scannedAtWarehouse ? (
                     <button
                       type="button"
-                      onClick={() => handleQuickScan(parcel.traceId)}
+                      onClick={ () =>() => handleQuickScan(parcel.traceId)}
                       className="flex-1 py-2.5 px-3 rounded-xl bg-[#FACC15] hover:bg-[#EAB308] text-[#050505] font-mono font-bold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-[#FACC15]/20 min-h-[44px] active:scale-[0.98]"
                     >
                       <Zap className="w-4 h-4 fill-current stroke-none" />
@@ -927,7 +927,7 @@ export const ReturnPolicy: React.FC = () => {
                       <div className="flex items-center justify-end gap-1.5">
                         <button
                           type="button"
-                          onClick={() => setInspectParcel(parcel)}
+                          onClick={ () =>() => setInspectParcel(parcel)}
                           className="px-2 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-white text-[10px] font-mono transition-colors"
                           title="View 3-Vector forensic audit detail"
                         >
@@ -937,7 +937,7 @@ export const ReturnPolicy: React.FC = () => {
                         {!parcel.scannedAtWarehouse ? (
                           <button
                             type="button"
-                            onClick={() => handleQuickScan(parcel.traceId)}
+                            onClick={ () =>() => handleQuickScan(parcel.traceId)}
                             className="px-2.5 py-1.5 rounded-lg bg-[#FACC15] hover:bg-[#EAB308] text-[#050505] font-bold text-[10px] font-mono shadow transition-all active:scale-95 inline-flex items-center gap-1 cursor-pointer"
                           >
                             <Zap className="w-3 h-3 fill-current stroke-none" />

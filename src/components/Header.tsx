@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center gap-3 min-w-0">
           <button
             id="header-mobile-menu-btn"
-            onClick={() => setIsMobileNavOpen(true)}
+            onClick={ () =>() => setIsMobileNavOpen(true)}
             className="lg:hidden p-2 rounded-lg bg-[#121212] border border-[#27272A] text-[#FACC15] hover:text-white transition-colors shrink-0"
             aria-label="Open mobile navigation"
           >
@@ -128,7 +128,7 @@ export const Header: React.FC = () => {
           {/* Global Quick Scan Return Barcode Button (SOLID YELLOW / BLACK TEXT) */}
           <button
             id="global-quick-scan-barcode-btn"
-            onClick={() => setIsScanModalOpen(true)}
+            onClick={ () =>() => setIsScanModalOpen(true)}
             title="Scan Physical Return Barcode to verify and clear ghost exceptions"
             className="px-3.5 py-2 rounded-lg bg-[#FACC15] hover:bg-[#EAB308] text-[#050505] font-mono text-xs font-bold tracking-tight shadow-md shadow-[#FACC15]/20 active:scale-[0.98] transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
           >
@@ -153,7 +153,7 @@ export const Header: React.FC = () => {
             )}
             <button
               id="header-bank-gap-toggle-btn"
-              onClick={() => setIsBankVarianceToggled(prev => !prev)}
+              onClick={ () =>() => setIsBankVarianceToggled(prev => !prev)}
               className="ml-1 px-1.5 py-0.5 rounded text-[10px] bg-zinc-800 hover:bg-zinc-700 text-[#A1A1AA] hover:text-white transition-colors"
               title="Toggle between Balanced Ledger and Under-Settled Gap simulation"
             >
@@ -170,7 +170,7 @@ export const Header: React.FC = () => {
           {/* Logout / Switch User to Login Gateway */}
           <button
             id="header-logout-btn"
-            onClick={() => setActivePage('login')}
+            onClick={ () =>() => setActivePage('login')}
             title="Return to TraceID Link Login Gateway"
             className="p-2 rounded-lg bg-[#121212] hover:bg-zinc-800 border border-[#27272A] text-[#A1A1AA] hover:text-white transition-colors cursor-pointer"
             aria-label="Logout"

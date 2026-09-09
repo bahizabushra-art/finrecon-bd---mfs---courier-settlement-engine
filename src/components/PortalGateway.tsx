@@ -124,7 +124,7 @@ export const PortalGateway: React.FC = () => {
             {/* CTA Button */}
             <button
               id="enter-track-a-btn"
-              onClick={() => handleSelectTrack('track-a')}
+              onClick={ () =>() => handleSelectTrack('track-a')}
               className="mt-8 w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.99] text-white text-sm font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-600/30 cursor-pointer min-h-[46px]"
             >
               <span>Enter Track A: Enterprise Journey</span>
@@ -184,7 +184,7 @@ export const PortalGateway: React.FC = () => {
             {/* CTA Button */}
             <button
               id="enter-track-b-btn"
-              onClick={() => handleSelectTrack('track-b')}
+              onClick={ () =>() => handleSelectTrack('track-b')}
               className="mt-8 w-full py-3 px-4 rounded-xl bg-cyan-600 hover:bg-cyan-500 active:scale-[0.99] text-white text-sm font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-cyan-600/30 cursor-pointer min-h-[46px]"
             >
               <span>Enter Track B: SME Journey</span>

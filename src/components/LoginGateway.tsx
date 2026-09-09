@@ -241,7 +241,7 @@ export const LoginGateway: React.FC = () => {
           <span>Quick Login:</span>
           <button
             type="button"
-            onClick={() => {
+            onClick={ () =>() => {
               setSelectedTrack('track-a');
               setCurrentTrack('track-a');
               setActivePage('orders');
@@ -253,7 +253,7 @@ export const LoginGateway: React.FC = () => {
           <span>|</span>
           <button
             type="button"
-            onClick={() => {
+            onClick={ () =>() => {
               setSelectedTrack('track-b');
               setCurrentTrack('track-b');
               setActivePage('orders');

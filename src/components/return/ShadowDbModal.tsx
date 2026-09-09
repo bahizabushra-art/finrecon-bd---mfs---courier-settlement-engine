@@ -59,7 +59,7 @@ export const ShadowDbModal: React.FC<ShadowDbModalProps> = ({ isOpen, onClose })
           </div>
 
           <button
-            onClick={onClose}
+            onClick={ () =>onClose}
             className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
           >
             <X className="w-5 h-5" />
@@ -172,7 +172,7 @@ export const ShadowDbModal: React.FC<ShadowDbModalProps> = ({ isOpen, onClose })
 
               <button
                 type="button"
-                onClick={executeDailyTtlPurge}
+                onClick={ () =>executeDailyTtlPurge}
                 disabled={isTtlRunning}
                 className={`px-4 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-2 shadow-lg shrink-0 ${
                   isTtlRunning
@@ -270,7 +270,7 @@ export const ShadowDbModal: React.FC<ShadowDbModalProps> = ({ isOpen, onClose })
           </div>
 
           <button
-            onClick={onClose}
+            onClick={ () =>onClose}
             className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition-colors"
           >
             Close Telemetry View

@@ -109,7 +109,7 @@ export const SixMonthReconBarChart: React.FC<{ titlePrefix?: string }> = ({ titl
         <div className="flex items-center gap-1 bg-[#090D18] p-1 rounded-xl border border-[#1E293B] w-full sm:w-auto justify-between sm:justify-start">
           <button
             id="bar-granularity-monthly"
-            onClick={() => setGranularity('monthly')}
+            onClick={ () =>() => setGranularity('monthly')}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
               granularity === 'monthly'
                 ? 'bg-blue-600 text-white shadow-md'
@@ -120,7 +120,7 @@ export const SixMonthReconBarChart: React.FC<{ titlePrefix?: string }> = ({ titl
           </button>
           <button
             id="bar-granularity-weekly"
-            onClick={() => setGranularity('weekly')}
+            onClick={ () =>() => setGranularity('weekly')}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
               granularity === 'weekly'
                 ? 'bg-blue-600 text-white shadow-md'
@@ -131,7 +131,7 @@ export const SixMonthReconBarChart: React.FC<{ titlePrefix?: string }> = ({ titl
           </button>
           <button
             id="bar-granularity-daily"
-            onClick={() => setGranularity('daily')}
+            onClick={ () =>() => setGranularity('daily')}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
               granularity === 'daily'
                 ? 'bg-blue-600 text-white shadow-md'

@@ -118,7 +118,7 @@ export const Sidebar: React.FC = () => {
 
           {isMobile && (
             <button
-              onClick={() => setIsMobileNavOpen(false)}
+              onClick={ () =>() => setIsMobileNavOpen(false)}
               className="p-1.5 rounded-lg text-[#A1A1AA] hover:text-[#FFFFFF] hover:bg-zinc-800 transition-colors"
             >
               <X className="w-5 h-5" />
@@ -132,7 +132,7 @@ export const Sidebar: React.FC = () => {
           <button
             id="sidebar-toggle-track-a"
             type="button"
-            onClick={() => {
+            onClick={ () =>() => {
               setCurrentTrack('track-a');
               // Ensure we are on one of the unified pages
               if (!['orders', 'audit', 'reports', 'returns', 'security'].includes(activePage)) {
@@ -151,7 +151,7 @@ export const Sidebar: React.FC = () => {
           <button
             id="sidebar-toggle-track-b"
             type="button"
-            onClick={() => {
+            onClick={ () =>() => {
               setCurrentTrack('track-b');
               if (!['orders', 'audit', 'reports', 'returns', 'security'].includes(activePage)) {
                 setActivePage('orders');
@@ -187,7 +187,7 @@ export const Sidebar: React.FC = () => {
             <button
               key={item.id}
               id={`nav-${item.id}`}
-              onClick={() => handleNavClick(item.id)}
+              onClick={ () =>() => handleNavClick(item.id)}
               className={`w-full text-left px-3 py-2.5 rounded-xl text-xs transition-all flex items-center justify-between group border cursor-pointer min-h-[46px] ${
                 isActive
                   ? 'bg-[#121212] text-[#FFFFFF] border-[#FACC15] shadow-sm shadow-[#FACC15]/10'
@@ -240,7 +240,7 @@ export const Sidebar: React.FC = () => {
         </div>
 
         <button
-          onClick={() => setActivePage('login')}
+          onClick={ () =>() => setActivePage('login')}
           className="w-full mt-2 py-2 px-3 rounded-lg bg-[#121212] hover:bg-zinc-800 border border-[#27272A] text-[11px] text-[#A1A1AA] hover:text-[#FFFFFF] font-mono flex items-center justify-center gap-2 cursor-pointer transition-colors"
         >
           <LogOut className="w-3.5 h-3.5 text-[#FACC15]" />
@@ -262,7 +262,7 @@ export const Sidebar: React.FC = () => {
         <div className="fixed inset-0 z-50 lg:hidden flex">
           <div
             className="fixed inset-0 bg-black/80 backdrop-blur-xs transition-opacity"
-            onClick={() => setIsMobileNavOpen(false)}
+            onClick={ () =>() => setIsMobileNavOpen(false)}
             aria-hidden="true"
           />
           <aside className="relative w-[85vw] max-w-xs bg-[#050505] text-[#FFFFFF] border-r border-[#27272A] flex flex-col select-none h-full shadow-2xl z-10 font-sans">

@@ -37,7 +37,7 @@ export const ReportPreviewModal: React.FC<Props> = ({
             </div>
           </div>
           <button
-            onClick={onClose}
+            onClick={ () =>onClose}
             className="text-slate-400 hover:text-white text-xs p-1 rounded bg-slate-800"
           >
             <X className="w-4 h-4" />
@@ -122,13 +122,13 @@ export const ReportPreviewModal: React.FC<Props> = ({
 
           <div className="flex items-center gap-2">
             <button
-              onClick={onClose}
+              onClick={ () =>onClose}
               className="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono"
             >
               Close Preview
             </button>
             <button
-              onClick={() => onDownload(batch)}
+              onClick={ () =>() => onDownload(batch)}
               className="px-4 py-1.5 rounded bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-mono font-bold flex items-center gap-1.5 shadow-md"
             >
               <Download className="w-3.5 h-3.5" />

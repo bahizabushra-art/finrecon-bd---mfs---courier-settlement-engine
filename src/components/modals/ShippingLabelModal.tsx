@@ -27,7 +27,7 @@ export const ShippingLabelModal: React.FC<Props> = ({ parcel, onClose }) => {
             </h3>
           </div>
           <button
-            onClick={onClose}
+            onClick={ () =>onClose}
             className="text-slate-400 hover:text-white text-xs p-1 rounded bg-slate-800"
           >
             <X className="w-4 h-4" />
@@ -122,13 +122,13 @@ export const ShippingLabelModal: React.FC<Props> = ({ parcel, onClose }) => {
 
           <div className="flex items-center gap-2">
             <button
-              onClick={onClose}
+              onClick={ () =>onClose}
               className="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono"
             >
               Close
             </button>
             <button
-              onClick={handlePrint}
+              onClick={ () =>handlePrint}
               className="px-4 py-1.5 rounded bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-bold flex items-center gap-1.5 shadow-md"
             >
               <Printer className="w-3.5 h-3.5" />

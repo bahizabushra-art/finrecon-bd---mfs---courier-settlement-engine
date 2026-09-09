@@ -162,7 +162,7 @@ export const ReportsArchive: React.FC = () => {
           <button
             id="download-complete-5-table-batch-btn"
             type="button"
-            onClick={handleDownloadBatch}
+            onClick={ () =>handleDownloadBatch}
             className="px-4 py-2.5 rounded-xl bg-[#FACC15] hover:bg-[#EAB308] text-[#050505] font-bold text-xs font-mono tracking-tight shadow-md shadow-[#FACC15]/20 flex items-center gap-2 cursor-pointer transition-all active:scale-[0.98]"
           >
             <Download className="w-4 h-4 stroke-[2.5]" />
@@ -235,7 +235,7 @@ export const ReportsArchive: React.FC = () => {
           return (
             <button
               key={tab.id}
-              onClick={() => setActiveTableTab(tab.id as any)}
+              onClick={ () =>() => setActiveTableTab(tab.id as any)}
               className={`px-3.5 py-2.5 rounded-xl border flex items-center gap-2 shrink-0 cursor-pointer transition-all ${
                 isActive
                   ? 'bg-[#121212] border-[#FACC15] text-[#FFFFFF] shadow-sm shadow-[#FACC15]/20 font-bold'
