@@ -149,7 +149,7 @@ export const ReturnPolicy: React.FC = () => {
 
   // Filtered Parcels for Table
   const filteredParcels = useMemo(() => {
-    return returnParcels.filter(parcel => {
+    return returnParcels?.filter(parcel => {
       // Track Filter
       if (filterReturnTrack === 'Track A Enterprise' && parcel.track !== 'Track A Enterprise') return false;
       if (filterReturnTrack === 'Track B SME' && parcel.track !== 'Track B SME') return false;
@@ -188,23 +188,23 @@ export const ReturnPolicy: React.FC = () => {
 
   // Recharts Data: Track A vs Track B 3-Vector Breakdown
   const chartData = useMemo(() => {
-    const trackAParcels = returnParcels.filter(p => p.track === 'Track A Enterprise');
-    const trackBParcels = returnParcels.filter(p => p.track === 'Track B SME');
+    const trackAParcels = returnParcels?.filter(p => p.track === 'Track A Enterprise');
+    const trackBParcels = returnParcels?.filter(p => p.track === 'Track B SME');
 
     return [
       {
         name: 'Track A (Enterprise API)',
-        verified: trackAParcels.filter(p => p.scannedAtWarehouse).length,
-        v1Overcharge: trackAParcels.filter(p => p.returnFeeBDT > configuredBaseFeeBDT).length,
-        v2Retention: trackAParcels.filter(p => p.courierReportedStatus === 'RETURNED' && !p.scannedAtWarehouse && p.deltaDaysInTransit > retentionThresholdDays).length,
-        v3Ghost: trackAParcels.filter(p => p.returnFeeBDT > 0 && !p.scannedAtWarehouse).length
+        verified: trackAParcels?.filter(p => p.scannedAtWarehouse).length,
+        v1Overcharge: trackAParcels?.filter(p => p.returnFeeBDT > configuredBaseFeeBDT).length,
+        v2Retention: trackAParcels?.filter(p => p.courierReportedStatus === 'RETURNED' && !p.scannedAtWarehouse && p.deltaDaysInTransit > retentionThresholdDays).length,
+        v3Ghost: trackAParcels?.filter(p => p.returnFeeBDT > 0 && !p.scannedAtWarehouse).length
       },
       {
         name: 'Track B (SME Portal)',
-        verified: trackBParcels.filter(p => p.scannedAtWarehouse).length,
-        v1Overcharge: trackBParcels.filter(p => p.returnFeeBDT > configuredBaseFeeBDT).length,
-        v2Retention: trackBParcels.filter(p => p.courierReportedStatus === 'RETURNED' && !p.scannedAtWarehouse && p.deltaDaysInTransit > retentionThresholdDays).length,
-        v3Ghost: trackBParcels.filter(p => p.returnFeeBDT > 0 && !p.scannedAtWarehouse).length
+        verified: trackBParcels?.filter(p => p.scannedAtWarehouse).length,
+        v1Overcharge: trackBParcels?.filter(p => p.returnFeeBDT > configuredBaseFeeBDT).length,
+        v2Retention: trackBParcels?.filter(p => p.courierReportedStatus === 'RETURNED' && !p.scannedAtWarehouse && p.deltaDaysInTransit > retentionThresholdDays).length,
+        v3Ghost: trackBParcels?.filter(p => p.returnFeeBDT > 0 && !p.scannedAtWarehouse).length
       }
     ];
   }, [returnParcels, configuredBaseFeeBDT, retentionThresholdDays]);

@@ -40,9 +40,9 @@ export const PaymentSchemeLifecycle: React.FC<{ trackContext: 'Track A Enterpris
   const [successToast, setSuccessToast] = useState<string | null>(null);
 
   // Filter by track and active filters
-  const trackRecords = paymentSchemeRecords.filter(r => r.track === trackContext);
+  const trackRecords = paymentSchemeRecords?.filter(r => r.track === trackContext);
 
-  const filteredRecords = trackRecords.filter(r => {
+  const filteredRecords = trackRecords?.filter(r => {
     const matchScheme = selectedSchemeFilter === 'ALL' || r.schemeType === selectedSchemeFilter;
     const matchTab =
       activeTab === 'all'
@@ -59,8 +59,8 @@ export const PaymentSchemeLifecycle: React.FC<{ trackContext: 'Track A Enterpris
     return matchScheme && matchTab && matchQuery;
   });
 
-  const pendingRecords = trackRecords.filter(r => r.status === 'PRE_RECONCILED_PENDING');
-  const settledRecords = trackRecords.filter(r => r.status === 'RECONCILED_SETTLED');
+  const pendingRecords = trackRecords?.filter(r => r.status === 'PRE_RECONCILED_PENDING');
+  const settledRecords = trackRecords?.filter(r => r.status === 'RECONCILED_SETTLED');
 
   // Interactive Reconcile & Transfer Handler
   const handleReconcileBatch = () => {

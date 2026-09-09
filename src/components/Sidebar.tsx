@@ -28,7 +28,7 @@ export const Sidebar: React.FC = () => {
   } = useRecon();
 
   // Count active ghost return exceptions for badge
-  const ghostCount = returnParcels.filter(p => p.vector3GhostException && !p.scannedAtWarehouse).length;
+  const ghostCount = returnParcels?.filter(p => p.vector3GhostException && !p.scannedAtWarehouse).length;
 
   const unifiedNavItems = [
     {

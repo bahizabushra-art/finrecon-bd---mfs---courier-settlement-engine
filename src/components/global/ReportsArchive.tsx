@@ -279,7 +279,7 @@ export const ReportsArchive: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#27272A] text-[#FFFFFF]">
-                {t1Data.filter(r => filterBySearch(r.traceId) || filterBySearch(r.status)).map(row => (
+                {t1Data?.filter(r => filterBySearch(r.traceId) || filterBySearch(r.status)).map(row => (
                   <tr key={row.traceId} className="hover:bg-[#050505] transition-colors">
                     <td className="py-3 px-4 font-bold text-[#FACC15]">{row.traceId}</td>
                     <td className="py-3 px-4 text-right">{formatBDT(row.orderAmount)}</td>
@@ -338,7 +338,7 @@ export const ReportsArchive: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#27272A] text-[#FFFFFF]">
-                {t2Data.filter(r => filterBySearch(r.traceId) || filterBySearch(r.status)).map(row => (
+                {t2Data?.filter(r => filterBySearch(r.traceId) || filterBySearch(r.status)).map(row => (
                   <tr key={row.traceId} className="hover:bg-[#050505] transition-colors">
                     <td className="py-3 px-4 font-bold text-[#FACC15]">{row.traceId}</td>
                     <td className="py-3 px-4 text-right">{formatBDT(row.orderAmount)}</td>
@@ -397,7 +397,7 @@ export const ReportsArchive: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#27272A] text-[#FFFFFF]">
-                {t3Data.filter(r => filterBySearch(r.twinTraceId) || filterBySearch(r.status)).map(row => (
+                {t3Data?.filter(r => filterBySearch(r.twinTraceId) || filterBySearch(r.status)).map(row => (
                   <tr key={row.twinTraceId} className="hover:bg-[#050505] transition-colors">
                     <td className="py-3 px-4 font-bold text-[#06B6D4]">{row.twinTraceId}</td>
                     <td className="py-3 px-4 text-right">
@@ -461,7 +461,7 @@ export const ReportsArchive: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#27272A] text-[#FFFFFF]">
-                {t4Data.filter(r => filterBySearch(r.traceId) || filterBySearch(r.status)).map(row => (
+                {t4Data?.filter(r => filterBySearch(r.traceId) || filterBySearch(r.status)).map(row => (
                   <tr key={row.traceId} className="hover:bg-[#050505] transition-colors">
                     <td className="py-3 px-4 font-bold text-[#FACC15]">{row.traceId}</td>
                     <td className="py-3 px-4 text-right">{formatBDT(row.productPrice)}</td>
@@ -521,7 +521,7 @@ export const ReportsArchive: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#27272A] text-[#FFFFFF]">
-                {t5Data.filter(r => filterBySearch(r.traceId) || filterBySearch(r.auditStatusBadge)).map(row => (
+                {t5Data?.filter(r => filterBySearch(r.traceId) || filterBySearch(r.auditStatusBadge)).map(row => (
                   <tr key={row.traceId} className="hover:bg-[#050505] transition-colors">
                     <td className="py-3 px-4 font-bold text-[#FACC15]">{row.traceId}</td>
                     <td className="py-3 px-4">

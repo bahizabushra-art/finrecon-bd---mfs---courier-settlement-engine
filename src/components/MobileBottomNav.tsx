@@ -15,7 +15,7 @@ export const MobileBottomNav: React.FC = () => {
   const { activePage, setActivePage, returnParcels } = useRecon();
   const [isMobileScannerModalOpen, setIsMobileScannerModalOpen] = useState(false);
 
-  const ghostCount = returnParcels.filter(p => p.vector3GhostException && !p.scannedAtWarehouse).length;
+  const ghostCount = returnParcels?.filter(p => p.vector3GhostException && !p.scannedAtWarehouse).length;
 
   return (
     <>
